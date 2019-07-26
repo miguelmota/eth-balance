@@ -30,7 +30,7 @@ async function balance (/* address, network */) {
     providerUri = 'http://localhost:8545'
   }
 
-  const provider = Web3.providers.HttpProvider(providerUri)
+  const provider = new Web3.providers.HttpProvider(providerUri)
   const web3 = new Web3(provider)
 
   const bal = await web3.eth.getBalance(address)
