@@ -1,0 +1,52 @@
+{
+  "name": "eth-balance",
+  "version": "0.0.1",
+  "description": "Simple way to check ether balance.",
+  "main": "index.js",
+  "bin": {
+    "eth_balance": "bin/eth_balance"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "standard --fix index.js test/test.js example/example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelmota/eth-balance"
+  },
+  "bugs": {
+    "url": "https://github.com/miguelmota/eth-balance/issues"
+  },
+  "homepage": "https://github.com/miguelmota/eth-balance",
+  "author": {
+    "name": "Miguel Mota",
+    "email": "hello@miguelmota.com",
+    "url": "https://miguelmota.com/"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/miguelmota/eth-balance/blob/master/LICENSE"
+  },
+  "dependencies": {
+    "meow": "^5.0.0",
+    "web3": "^1.0.0-beta.55"
+  },
+  "keywords": [
+    "ethereum",
+    "eth",
+    "ether",
+    "send",
+    "transfer",
+    "balance",
+    "gwei",
+    "wei",
+    "checker",
+    "watcher",
+    "cli"
+  ],
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "tape": "^4.10.2",
+    "tape-await": "^0.1.2"
+  }
+}
