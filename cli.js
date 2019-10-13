@@ -35,16 +35,33 @@ const cli = meow(`
   }
 })
 
-const address = cli.flags.a || cli.flags.address || cli.input[0]
+let address = cli.flags.a || cli.flags.address || cli.input[0]
 const network = cli.flags.n || cli.flags.network
 const convert = cli.flags.c || cli.flags.convert
 
-if (address === undefined) {
-  console.log('address argument is required')
-  process.exit(1)
+if (process.stdin) {
+  process.stdin.setEncoding('utf8')
+  process.stdin.resume()
+  let content = ''
+  process.stdin.on('data', (buf) => {
+    content += buf.toString()
+  })
+  setTimeout(() => {
+    content = content.trim()
+    address = (content || address)
+
+    run(address, network, convert)
+  }, 10)
+} else {
+  run(address, network, convert)
 }
 
-async function main() {
+async function run(address, network, convert) {
+  if (address === undefined) {
+    console.log('address argument is required')
+    process.exit(1)
+  }
+
   try {
     const balance = await getBalance({
       address,
@@ -60,5 +77,3 @@ async function main() {
     process.exit(1)
   }
 }
-
-main()
