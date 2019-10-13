@@ -84,7 +84,7 @@ $ eth_balance 0x90f8bf6a479f320ead074411a4b0e7944ea8c9c1 --network rinkeby --con
 Piping address example:
 
 ```bash
-$ 0x90f8bf6a479f320ead074411a4b0e7944ea8c9c1 | eth_balance -n rinkeby -c wei
+$ echo 0x90f8bf6a479f320ead074411a4b0e7944ea8c9c1 | eth_balance -n rinkeby -c wei
 
 297098768000000000
 ```
