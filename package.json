@@ -1,10 +1,11 @@
 {
   "name": "eth-balance",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple way to check ether balance of an account address.",
   "main": "index.js",
   "bin": {
-    "eth_balance": "bin/eth_balance"
+    "eth_balance": "bin/eth_balance",
+    "eth-balance": "bin/eth_balance"
   },
   "scripts": {
     "test": "tape test/*.js",
